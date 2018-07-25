@@ -12,7 +12,8 @@ public class Validator {
 
 		do {
 			userInput = getInt(scnr, " ");
-			if ((userInput > 1) && (userInput < 20)) {
+
+			if ((userInput >= 1) && (userInput < 20)) {
 				Valid = true;
 				// System.out.println("Valid number");
 
@@ -61,23 +62,25 @@ public class Validator {
 	}
 
 	public static String getString(Scanner scnr, String prompt) {
+		String userInput = scnr.next();
+		String userPrompt = " ";
 		boolean isValid = false;
 
 		do {
-			String userInput = prompt;
-			if (userInput.matches("[a-zA-Z]")) {
+			userPrompt = prompt;
+			if (userInput.matches("[a-zA-Z]+")) {
 				isValid = true;
-				System.out.print(prompt);
+				// System.out.print("valid String");
 				return userInput;
 
 			} else {
-
 				isValid = false;
+				System.out.println(" That data does not exist. Please try again.please enter valid answer");
+				return getString(scnr, prompt);
+
 			}
 		} while (isValid == false);
 
-//		System.out.print(prompt);
-		return getString(scnr, prompt);
 	}
 
 }

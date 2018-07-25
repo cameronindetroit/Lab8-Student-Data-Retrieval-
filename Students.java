@@ -25,4 +25,9 @@ public class Students {
 		System.out.println(studentFavoriteFood.length);
 	}
 
+	public static void studentInformation(String studentInformation) {
+		System.out.println(studentInformation);
+
+	}
+
 }
